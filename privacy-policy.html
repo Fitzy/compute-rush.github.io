@@ -26,7 +26,7 @@
     <p><strong>Last updated: May 2026</strong></p>
 
     <h2>Overview</h2>
-    <p>Compute Rush: Idle Clicker is a free idle game. Data processing is handled by third-party services as described below. We use Google Firebase to store voluntarily submitted feedback.</p>
+    <p>Compute Rush: Idle Clicker is a free idle game. Data processing is handled by third-party services as described below. We use Google Firebase for anonymous gameplay analytics and to store voluntarily submitted feedback.</p>
 
     <h2>Advertising</h2>
     <p>This app displays ads via <strong>Google AdMob</strong> with <strong>Unity Ads</strong> as an additional ad network through AdMob mediation. These services may collect device identifiers, advertising identifiers, and usage data to serve personalised advertising. This is governed by their respective privacy policies:</p>
@@ -46,6 +46,16 @@
     </ul>
     <p>This data is processed by Google in accordance with their privacy policy. No account registration is required to play the core game, but signing in to Google Play Games is required to use leaderboards and achievements.</p>
 
+    <h3>Analytics Data</h3>
+    <p>We use Google Firebase Analytics to collect anonymous usage data that helps us understand how players interact with the game and improve the experience. This data is collected automatically and includes:</p>
+    <ul>
+        <li><strong>Gameplay events</strong> – actions such as purchasing servers, hiring engineers, unlocking tiers, and watching ads</li>
+        <li><strong>Session data</strong> – session start/end times and session duration</li>
+        <li><strong>Device information</strong> – device model, operating system version, and screen resolution</li>
+        <li><strong>App information</strong> – app version and crash reports</li>
+    </ul>
+    <p>This data is anonymous and cannot be used to identify you personally. No personal information, gameplay saves, or account details are included in analytics data.</p>
+
     <h3>Feedback Data</h3>
     <p>When you voluntarily submit feedback through the in-app feedback form, the following data is collected and stored in Google Firebase:</p>
     <ul>
@@ -61,6 +71,7 @@
     <h2>Data Retention &amp; Deletion</h2>
     <p>Local game save data is stored on your device and can be deleted at any time by clearing the app's data or uninstalling the app.</p>
     <p>Data associated with Google Play Games Services (player profile, achievements, leaderboard scores, play activity) is retained by Google in accordance with their data retention policies. You can manage or delete this data through your Google Account settings at <a href="https://myaccount.google.com/data-and-privacy">myaccount.google.com/data-and-privacy</a>. You may also disconnect the app from Google Play Games via your Google Account, which revokes the app's access to your player data.</p>
+    <p>Anonymous analytics data is retained by Google Firebase for up to 14 months, after which it is automatically deleted.</p>
     <p>Feedback data submitted through the in-app feedback form is retained in Google Firebase for up to 12 months, after which it is deleted. You can request deletion of your feedback data at any time by contacting us via the Google Play Store listing.</p>
     <p>Advertising data collected by Google AdMob and Unity Ads is retained and managed by Google and Unity Technologies respectively. You can manage your ad personalisation preferences at <a href="https://adssettings.google.com">adssettings.google.com</a>. For Unity Ads data, refer to the <a href="https://unity.com/legal/privacy-policy">Unity Privacy Policy</a>.</p>
 
@@ -88,7 +99,7 @@
             </tr>
             <tr>
                 <td>Google Firebase</td>
-                <td>Storage of voluntarily submitted feedback</td>
+                <td>Anonymous gameplay analytics and storage of voluntarily submitted feedback</td>
                 <td><a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></td>
             </tr>
         </tbody>
