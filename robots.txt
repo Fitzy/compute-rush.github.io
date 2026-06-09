@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://compute-rush.github.io/sitemap.xml

@@ -3,7 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compute Rush — Idle Clicker Game</title>
+<title>Compute Rush: Idle Data Center Tycoon Clicker Game for Android</title>
+<meta name="description" content="Build and scale data centers in Compute Rush, a free idle tycoon clicker game for Android. Buy servers, hire engineers, upgrade hardware, and earn offline. Download on Google Play.">
+<meta name="keywords" content="idle game, tycoon game, clicker game, data center game, server tycoon, idle clicker android, offline idle game, compute rush, data center simulator, tech tycoon">
+<link rel="canonical" href="https://compute-rush.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://compute-rush.github.io/">
+<meta property="og:title" content="Compute Rush: Idle Data Center Tycoon Clicker Game">
+<meta property="og:description" content="Build and scale data centers from a humble Basic Hub to a sprawling Silicon Nexus. Buy servers, hire engineers, upgrade hardware, and earn while you're away.">
+<meta property="og:image" content="https://compute-rush.github.io/ic_launcher_512.png">
+<meta property="og:site_name" content="Compute Rush">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Compute Rush: Idle Data Center Tycoon Clicker Game">
+<meta name="twitter:description" content="Build and scale data centers from a humble Basic Hub to a sprawling Silicon Nexus. Buy servers, hire engineers, upgrade hardware, and earn while you're away.">
+<meta name="twitter:image" content="https://compute-rush.github.io/ic_launcher_512.png">
+
+<meta name="theme-color" content="#070b14">
+<link rel="icon" type="image/png" href="ic_launcher_512.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Compute Rush: Idle Clicker",
+  "operatingSystem": "Android",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Idle Tycoon Clicker",
+  "description": "An idle tycoon clicker where you build and scale data centers, from a humble Basic Hub to a sprawling Silicon Nexus and beyond. Buy servers, hire engineers, upgrade hardware, and watch your income tick upward even while you're away.",
+  "url": "https://compute-rush.github.io/",
+  "image": "https://compute-rush.github.io/ic_launcher_512.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "installUrl": "https://play.google.com/store/apps/details?id=com.jv.computerush"
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -47,11 +86,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 4rem 1.5rem;
-    max-width: 540px;
+    padding: 4rem 1.5rem 2rem;
+    max-width: 720px;
     margin: 0 auto;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.5rem;
   }
 
   .logo-icon {
@@ -83,6 +128,85 @@
   }
   .play-badge:hover img { opacity: .8; }
 
+  .features {
+    width: 100%;
+    margin-bottom: 3.5rem;
+  }
+
+  .features h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1.8rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    text-align: left;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 12px;
+    padding: 1.4rem;
+  }
+
+  .feature-card h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: .95rem;
+    color: #fff;
+    margin-bottom: .4rem;
+  }
+
+  .feature-card p {
+    color: var(--text-dim);
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+
+  .faq {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  .faq h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    padding: 1.2rem 0;
+  }
+
+  .faq-item:first-of-type {
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  .faq-item h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: .92rem;
+    color: #fff;
+    margin-bottom: .4rem;
+  }
+
+  .faq-item p {
+    color: var(--text-dim);
+    font-size: .85rem;
+    line-height: 1.6;
+  }
+
   footer {
     text-align: center;
     padding: 1.5rem 2rem;
@@ -104,6 +228,7 @@
   @media (max-width: 480px) {
     nav { padding: 1rem 1.2rem; }
     h1 { font-size: 1.5rem; }
+    .features-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -114,18 +239,74 @@
 </nav>
 
 <main>
-  <img src="ic_launcher_512.png" alt="Compute Rush" class="logo-icon">
-  <h1>Compute Rush</h1>
-  <p class="description">An idle tycoon clicker where you build and scale data centers — from a humble Basic Hub to a sprawling Silicon Nexus and beyond. Buy servers, hire engineers, upgrade hardware, and watch your income tick upward even while you're away. Deep progression, offline earnings, and your next obsession.</p>
-  <a href="https://play.google.com/store/apps/details?id=com.jv.computerush" class="play-badge" aria-label="Get it on Google Play">
-    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-  </a>
+  <section class="hero">
+    <img src="ic_launcher_512.png" alt="Compute Rush idle data center tycoon game icon" class="logo-icon" width="96" height="96">
+    <h1>Compute Rush: Idle Clicker</h1>
+    <p class="description">An idle tycoon clicker where you build and scale data centers, from a humble Basic Hub to a sprawling Silicon Nexus and beyond. Buy servers, hire engineers, upgrade hardware, and watch your income tick upward even while you're away. Deep progression, offline earnings, and your next obsession.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.jv.computerush" class="play-badge" aria-label="Get Compute Rush on Google Play">
+      <img src="google-play-badge.png" alt="Get it on Google Play">
+    </a>
+  </section>
+
+  <section class="features">
+    <h2>Why We Think You'll Love Compute Rush</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Build Data Centers</h3>
+        <p>Start with a single rack and grow into a global server empire. Expand across multiple facilities as your tech empire scales.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Offline Earnings</h3>
+        <p>Your data centers keep running while you're away. Come back to stacks of idle income ready to reinvest in upgrades.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Hire &amp; Upgrade</h3>
+        <p>Recruit engineers, purchase server hardware, and unlock powerful upgrades that multiply your earnings per second.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Deep Progression</h3>
+        <p>Dozens of milestones, prestige layers, and unlockable tiers keep you pushing forward from Basic Hub to Silicon Nexus.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">Is Compute Rush free to play?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">Yes, Compute Rush is completely free to download and play on Android. You can watch optional ads to boost your progress, but spending money is never required.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">How do offline earnings work?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">Your data centers continue generating income even when the app is closed. When you return, you'll collect all the earnings your servers produced while you were away.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">What kind of game is Compute Rush?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">Compute Rush is an idle tycoon clicker game. Tap to earn, hire engineers to automate, and invest in upgrades to build a data center empire that earns money for you over time, even when you're not playing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">Where can I download Compute Rush?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">Compute Rush is available on the <a href="https://play.google.com/store/apps/details?id=com.jv.computerush" style="color: var(--cyan);">Google Play Store</a> for Android devices.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <span>&copy; 2026 Compute Rush.</span>
   <span>&middot;</span>
-  <a href="https://fitzy.github.io/compute-rush.github.io/privacy-policy.html">Privacy Policy</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
 </footer>
 
 </body>
