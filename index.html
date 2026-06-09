@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compute Rush — Idle Clicker Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --void: #070b14;
+    --surface: #0e1525;
+    --cyan: #00e5ff;
+    --text: #d8dee8;
+    --text-dim: #6b7a94;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: var(--body);
+    background: var(--void);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .logo {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #fff;
+  }
+  .logo span { color: var(--cyan); }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .logo-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: -.02em;
+    margin-bottom: .8rem;
+  }
+
+  .description {
+    color: var(--text-dim);
+    font-size: .95rem;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .play-badge img {
+    height: 52px;
+    transition: opacity .2s;
+  }
+  .play-badge:hover img { opacity: .8; }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: .72rem;
+    color: var(--text-dim);
+    border-top: 1px solid rgba(255,255,255,.04);
+    display: flex;
+    justify-content: center;
+    gap: .4rem;
+    flex-wrap: wrap;
+  }
+  footer a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">COMPUTE<span>RUSH</span></div>
+</nav>
+
+<main>
+  <img src="icon.png" alt="Compute Rush" class="logo-icon">
+  <h1>Compute Rush</h1>
+  <p class="description">An idle tycoon clicker where you build and scale data centers — from a humble Basic Hub to a sprawling Silicon Nexus and beyond. Buy servers, hire engineers, upgrade hardware, and watch your income tick upward even while you're away. Deep progression, offline earnings, and your next obsession.</p>
+  <a href="https://play.google.com/store/apps/details?id=com.jv.computerush" class="play-badge" aria-label="Get it on Google Play">
+    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+  </a>
+</main>
+
+<footer>
+  <span>&copy; 2026 Compute Rush.</span>
+  <span>&middot;</span>
+  <a href="https://fitzy.github.io/compute-rush.github.io/privacy-policy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
