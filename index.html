@@ -12,13 +12,13 @@
 <meta property="og:url" content="https://fitzy.github.io/compute-rush.github.io/">
 <meta property="og:title" content="Compute Rush: Idle Data Center Tycoon Clicker Game">
 <meta property="og:description" content="Build and scale data centers from a humble Basic Hub to a sprawling Silicon Nexus. Buy servers, hire engineers, upgrade hardware, and earn while you're away.">
-<meta property="og:image" content="https://fitzy.github.io/compute-rush.github.io/ic_launcher_512.png">
+<meta property="og:image" content="https://fitzy.github.io/compute-rush.github.io/screenshots/5.png">
 <meta property="og:site_name" content="Compute Rush">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Compute Rush: Idle Data Center Tycoon Clicker Game">
 <meta name="twitter:description" content="Build and scale data centers from a humble Basic Hub to a sprawling Silicon Nexus. Buy servers, hire engineers, upgrade hardware, and earn while you're away.">
-<meta name="twitter:image" content="https://fitzy.github.io/compute-rush.github.io/ic_launcher_512.png">
+<meta name="twitter:image" content="https://fitzy.github.io/compute-rush.github.io/screenshots/5.png">
 
 <meta name="theme-color" content="#070b14">
 <link rel="icon" type="image/png" href="ic_launcher_512.png">
@@ -34,6 +34,12 @@
   "description": "An idle tycoon clicker where you build and scale data centers, from a humble Basic Hub to a sprawling Silicon Nexus and beyond. Buy servers, hire engineers, upgrade hardware, and watch your income tick upward even while you're away.",
   "url": "https://fitzy.github.io/compute-rush.github.io/",
   "image": "https://fitzy.github.io/compute-rush.github.io/ic_launcher_512.png",
+  "screenshot": [
+    "https://fitzy.github.io/compute-rush.github.io/screenshots/3.png",
+    "https://fitzy.github.io/compute-rush.github.io/screenshots/4.png",
+    "https://fitzy.github.io/compute-rush.github.io/screenshots/5.png",
+    "https://fitzy.github.io/compute-rush.github.io/screenshots/6.png"
+  ],
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -169,6 +175,108 @@
     line-height: 1.5;
   }
 
+  .screenshots {
+    width: 100vw;
+    margin-bottom: 3.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .screenshots h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1.8rem;
+    text-align: center;
+  }
+
+  .shots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .shot-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .shot-card img {
+    display: block;
+    width: 90%;
+    max-width: 260px;
+    height: auto;
+    margin: 1.2rem auto 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.06);
+    cursor: zoom-in;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .shot-card img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,229,255,.15);
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(3,6,12,.9);
+    backdrop-filter: blur(4px);
+    cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: .7;
+    transition: opacity .2s;
+  }
+  .lightbox-close:hover { opacity: 1; }
+
+  .shot-card .shot-text {
+    padding: 1.1rem 1.3rem 1.3rem;
+  }
+
+  .shot-card h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: .95rem;
+    color: #fff;
+    margin-bottom: .4rem;
+  }
+
+  .shot-card p {
+    color: var(--text-dim);
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+
   .faq {
     width: 100%;
     text-align: left;
@@ -225,10 +333,15 @@
   }
   footer a:hover { color: var(--text); }
 
+  @media (max-width: 600px) {
+    .shots-grid { grid-template-columns: 1fr 1fr; }
+  }
+
   @media (max-width: 480px) {
     nav { padding: 1rem 1.2rem; }
     h1 { font-size: 1.5rem; }
     .features-grid { grid-template-columns: 1fr; }
+    .shots-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -248,24 +361,58 @@
     </a>
   </section>
 
+  <section class="screenshots">
+    <h2>Inside Compute Rush</h2>
+    <div class="shots-grid">
+      <div class="shot-card">
+        <img src="screenshots/3.png" alt="Building a first data center in Compute Rush, filling server slots in the Basic Hub" loading="lazy" width="320" height="690">
+        <div class="shot-text">
+          <h3>Build Your First Data Center</h3>
+          <p>Start with a Basic Hub, fill its slots with servers, and watch your income tick up every cycle.</p>
+        </div>
+      </div>
+      <div class="shot-card">
+        <img src="screenshots/4.png" alt="Hiring and upgrading engineers to speed up cycles in Compute Rush" loading="lazy" width="320" height="690">
+        <div class="shot-text">
+          <h3>Hire &amp; Upgrade Engineers</h3>
+          <p>Recruit specialist engineers and upgrade them to run cycles faster and boost your efficiency.</p>
+        </div>
+      </div>
+      <div class="shot-card">
+        <img src="screenshots/5.png" alt="The prestige screen in Compute Rush showing a revenue multiplier and Compute Tokens" loading="lazy" width="320" height="690">
+        <div class="shot-text">
+          <h3>Prestige</h3>
+          <p>Sell your data centers to boost a permanent revenue multiplier and earn Compute Tokens.</p>
+        </div>
+      </div>
+      <div class="shot-card">
+        <img src="screenshots/6.png" alt="The Technology Tree in Compute Rush where Compute Tokens unlock permanent upgrades" loading="lazy" width="320" height="690">
+        <div class="shot-text">
+          <h3>Unlock the Technology Tree</h3>
+          <p>Spend Compute Tokens across a deep tech tree for cheaper servers, faster cycles, bigger offline earnings, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="features">
-    <h2>Why We Think You'll Love Compute Rush</h2>
+    <h2>What Makes It Tick</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <h3>Build Data Centers</h3>
-        <p>Start with a single rack and grow into a global server empire. Expand across multiple facilities as your tech empire scales.</p>
+        <h3>Always Earning</h3>
+        <p>Your data centers keep running while you're away. Come back to stacks of idle income ready to reinvest.</p>
       </div>
       <div class="feature-card">
-        <h3>Offline Earnings</h3>
-        <p>Your data centers keep running while you're away. Come back to stacks of idle income ready to reinvest in upgrades.</p>
+        <h3>Endless Progression</h3>
+        <p>Dozens of milestones and prestige layers keep you pushing forward from Basic Hub to Silicon Nexus and beyond.</p>
       </div>
       <div class="feature-card">
-        <h3>Hire &amp; Upgrade</h3>
-        <p>Recruit engineers, purchase server hardware, and unlock powerful upgrades that multiply your earnings per second.</p>
+        <h3>Free to Play</h3>
+        <p>Download and play the whole game for free. Optional ads can boost your progress, but spending is never required.</p>
       </div>
       <div class="feature-card">
-        <h3>Deep Progression</h3>
-        <p>Dozens of milestones, prestige layers, and unlockable tiers keep you pushing forward from Basic Hub to Silicon Nexus.</p>
+        <h3>Easy to Pick Up</h3>
+        <p>Tap to earn, automate with engineers, and let the numbers climb. Simple to start, deep enough to obsess over.</p>
       </div>
     </div>
   </section>
@@ -308,6 +455,42 @@
   <span>&middot;</span>
   <a href="privacy-policy.html">Privacy Policy</a>
 </footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  (function () {
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightboxImg');
+    var close = document.getElementById('lightboxClose');
+
+    function open(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function hide() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    document.querySelectorAll('.shot-card img').forEach(function (img) {
+      img.addEventListener('click', function () { open(img.src, img.alt); });
+    });
+    lb.addEventListener('click', function (e) {
+      if (e.target !== lbImg) hide();
+    });
+    close.addEventListener('click', hide);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('open')) hide();
+    });
+  })();
+</script>
 
 </body>
 </html>
