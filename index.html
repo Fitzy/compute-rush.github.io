@@ -13,15 +13,18 @@
 <meta property="og:title" content="Compute Rush: Idle Data Center Tycoon Clicker Game">
 <meta property="og:description" content="Build and scale data centers from a humble Basic Hub to a sprawling Silicon Nexus. Buy servers, hire engineers, upgrade hardware, and earn while you're away.">
 <meta property="og:image" content="https://fitzy.github.io/compute-rush.github.io/screenshots/5.png">
+<meta property="og:image:alt" content="Compute Rush idle data center tycoon game screenshot">
 <meta property="og:site_name" content="Compute Rush">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Compute Rush: Idle Data Center Tycoon Clicker Game">
 <meta name="twitter:description" content="Build and scale data centers from a humble Basic Hub to a sprawling Silicon Nexus. Buy servers, hire engineers, upgrade hardware, and earn while you're away.">
 <meta name="twitter:image" content="https://fitzy.github.io/compute-rush.github.io/screenshots/5.png">
+<meta name="twitter:image:alt" content="Compute Rush idle data center tycoon game screenshot">
 
 <meta name="theme-color" content="#070b14">
 <link rel="icon" type="image/png" href="ic_launcher_512.png">
+<link rel="apple-touch-icon" href="ic_launcher_512.png">
 
 <script type="application/ld+json">
 {
@@ -49,9 +52,13 @@
 }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { overflow-x: hidden; }
 
   :root {
     --void: #070b14;
@@ -177,6 +184,8 @@
 
   .screenshots {
     width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     margin-bottom: 3.5rem;
     padding: 0 1.5rem;
   }
@@ -341,7 +350,7 @@
     nav { padding: 1rem 1.2rem; }
     h1 { font-size: 1.5rem; }
     .features-grid { grid-template-columns: 1fr; }
-    .shots-grid { grid-template-columns: 1fr 1fr; }
+    .shots-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -353,7 +362,7 @@
 
 <main>
   <section class="hero">
-    <img src="ic_launcher_512.png" alt="Compute Rush idle data center tycoon game icon" class="logo-icon" width="96" height="96">
+    <img src="icon-192.png" alt="Compute Rush idle data center tycoon game icon" class="logo-icon" width="96" height="96" fetchpriority="high">
     <h1>Compute Rush: Idle Clicker</h1>
     <p class="description">An idle tycoon clicker where you build and scale data centers, from a humble Basic Hub to a sprawling Silicon Nexus and beyond. Buy servers, hire engineers, upgrade hardware, and watch your income tick upward even while you're away. Deep progression, offline earnings, and your next obsession.</p>
     <a href="https://play.google.com/store/apps/details?id=com.jv.computerush" class="play-badge" aria-label="Get Compute Rush on Google Play">
@@ -365,31 +374,31 @@
     <h2>Inside Compute Rush</h2>
     <div class="shots-grid">
       <div class="shot-card">
-        <img src="screenshots/3.png" alt="Building a first data center in Compute Rush, filling server slots in the Basic Hub" loading="lazy" width="320" height="690">
+        <img src="screenshots/3-thumb.jpg" data-full="screenshots/3.png" alt="Building a first data center in Compute Rush, filling server slots in the Basic Hub" loading="lazy" width="520" height="1160">
         <div class="shot-text">
           <h3>Build Your First Data Center</h3>
           <p>Start with a Basic Hub, fill its slots with servers, and watch your income tick up every cycle.</p>
         </div>
       </div>
       <div class="shot-card">
-        <img src="screenshots/4.png" alt="Hiring and upgrading engineers to speed up cycles in Compute Rush" loading="lazy" width="320" height="690">
+        <img src="screenshots/4-thumb.jpg" data-full="screenshots/4.png" alt="Hiring and upgrading engineers to speed up cycles in Compute Rush" loading="lazy" width="520" height="1160">
         <div class="shot-text">
           <h3>Hire &amp; Upgrade Engineers</h3>
           <p>Recruit specialist engineers and upgrade them to run cycles faster and boost your efficiency.</p>
         </div>
       </div>
       <div class="shot-card">
-        <img src="screenshots/5.png" alt="The prestige screen in Compute Rush showing a revenue multiplier and Compute Tokens" loading="lazy" width="320" height="690">
+        <img src="screenshots/5-thumb.jpg" data-full="screenshots/5.png" alt="The prestige screen in Compute Rush showing a revenue multiplier and Compute Tokens" loading="lazy" width="520" height="1160">
         <div class="shot-text">
           <h3>Prestige</h3>
-          <p>Sell your data centers to boost a permanent revenue multiplier and earn Compute Tokens.</p>
+          <p>Sell your data centers to gain a permanent revenue multiplier and earn Compute Tokens.</p>
         </div>
       </div>
       <div class="shot-card">
-        <img src="screenshots/6.png" alt="The Technology Tree in Compute Rush where Compute Tokens unlock permanent upgrades" loading="lazy" width="320" height="690">
+        <img src="screenshots/6-thumb.jpg" data-full="screenshots/6.png" alt="The Technology Tree in Compute Rush where Compute Tokens unlock permanent upgrades" loading="lazy" width="520" height="1160">
         <div class="shot-text">
-          <h3>Unlock the Technology Tree</h3>
-          <p>Spend Compute Tokens across a deep tech tree for cheaper servers, faster cycles, bigger offline earnings, and more.</p>
+          <h3>Unlock Upgrades in Technology Tree</h3>
+          <p>Spend Compute Tokens for cheaper servers, faster cycles, bigger offline earnings, and more.</p>
         </div>
       </div>
     </div>
@@ -480,7 +489,9 @@
     }
 
     document.querySelectorAll('.shot-card img').forEach(function (img) {
-      img.addEventListener('click', function () { open(img.src, img.alt); });
+      img.addEventListener('click', function () {
+        open(img.getAttribute('data-full') || img.src, img.alt);
+      });
     });
     lb.addEventListener('click', function (e) {
       if (e.target !== lbImg) hide();
